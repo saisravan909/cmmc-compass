@@ -1,18 +1,17 @@
 <div align="center">
-  <img src="assets/logo.png" alt="CMMC Compass" width="340" />
-
-  <h1>CMMC Compass</h1>
-  <p><strong>GRC Guidance &nbsp;·&nbsp; Clarity &nbsp;·&nbsp; Secure Progress</strong></p>
-
-  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-  [![CMMC Level 1 & 2](https://img.shields.io/badge/CMMC-Level%201%20%26%202-0a3d62?style=flat)](https://www.acq.osd.mil/cmmc/)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-2ecc71.svg)](CONTRIBUTING.md)
-  [![Status](https://img.shields.io/badge/status-active%20development-teal.svg)]()
+  <img src="assets/logo.png" alt="CMMC Compass" width="320" />
 </div>
 
----
+# CMMC Compass
 
-> CMMC Compass turns a 110-control federal cybersecurity framework into a guided, intuitive, and satisfying compliance journey — from first login to assessment-ready. Built for defense contractors and the consultancies that support them.
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CMMC Level 1 and 2](https://img.shields.io/badge/CMMC-Level%201%20%26%202-0a3d62)](https://www.acq.osd.mil/cmmc/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-2ecc71.svg)](CONTRIBUTING.md)
+[![Status](https://img.shields.io/badge/status-active%20development-teal.svg)]()
+
+A compliance management tool for defense contractors working toward CMMC Level 1 or Level 2 certification. It guides organizations through all 14 NIST SP 800-171 domains, tracks the SPRS score in real time, manages evidence, and generates the SSP and POA&M documents required for assessment.
+
+The tool also supports consultancies and MSPs that manage compliance across multiple client organizations.
 
 ---
 
@@ -36,53 +35,60 @@
 
 ## Overview
 
-The Cybersecurity Maturity Model Certification (CMMC) is a Department of Defense framework requiring defense contractors to demonstrate cybersecurity compliance before and during contract performance. The audit process involves 14 domains, up to 110 controls, a formally assessed SPRS score, a System Security Plan (SSP), and a Plan of Action & Milestones (POA&M) — all of which must be maintained, evidenced, and exportable on demand.
+CMMC 2.0 requires defense contractors to prove they have implemented up to 110 security controls before and during DoD contract performance. The process involves scoping the assessment environment, completing a System Security Plan, collecting evidence for each control, remediating gaps through a Plan of Action and Milestones, and submitting a scored SPRS score to the DoD database.
 
-Most contractors experience **compliance fatigue** before they ever reach an assessor. CMMC Compass eliminates that by making the process feel manageable, measurable, and even rewarding.
-
-**Three core principles drive every design decision:**
-
-| Principle | What it means |
-|---|---|
-| **Clarity** | Every control is explained in plain English. No jargon without translation. |
-| **Guidance** | Every screen answers: *"What do I do next?"* Progress is always visible. |
-| **Progress** | Your SPRS score is live, visible, and always climbing. Compliance becomes a metric, not a mystery. |
+Most organizations find this process difficult to manage with spreadsheets and shared drives. CMMC Compass keeps everything in one place: the control assessment, the evidence, the score, and the documents.
 
 ---
 
 ## Who It Is For
 
-| Track | Audience | Purpose |
+| Track | User | What they do in the tool |
 |---|---|---|
-| **Track 1** | Defense Contractors | Self-assessment, evidence management, SSP/POA&M generation |
-| **Track 3** | Consultancies / MSPs / MSSPs | Multi-client management, policy templates, aggregate health views |
+| Track 1 | Defense Contractor | Self-assessment, evidence management, SSP and POA&M generation |
+| Track 3 | Consultancy or MSP | Manage multiple client organizations, push policy templates, view aggregate status |
 
-> Track 2 (C3PAO Assessor tooling) is planned for a future phase.
+Track 2 (C3PAO assessor tooling) is planned for a later phase.
 
 ---
 
 ## Features
 
-### Track 1 — Contractor Compliance Platform
+### Track 1: Contractor Platform
 
-- **Smart Scoping Engine** — A logic-driven questionnaire that auto-determines CMMC Level 1 (FCI only) or Level 2 (CUI) applicability and defines your assessment boundary (ADE). Categorizes CUI Assets, Security Protection Assets, and Out-of-Scope Assets.
-- **Domain-by-Domain Guided Assessment** — Walk all 14 domains at a human pace. Each control includes a plain-English summary, NIST discussion, and example evidence types.
-- **Live SPRS Score** — Supplier Performance Risk System score updates in real time. Starts at 110 and deducts points per unimplemented control (1, 3, or 5 points). Always visible. Always accurate.
-- **Golden Path Widget** — Surfaces the 3 controls that will gain you the most SPRS points right now. Creates an actionable remediation path, not just a list.
-- **Evidence Locker** — Upload once, map to many controls. One Access Control Policy can satisfy 10+ requirements — the system models this correctly with a many-to-many relationship. Evidence expiry flagging keeps your package audit-ready year-round.
-- **POA&M Tracker** — Automatically generated from all non-met controls. Assign owners, set due dates, track remediation status, and export in OMB-compliant format.
-- **SSP Auto-Assembly** — As you enter implementation statements for each control, the System Security Plan silently assembles in the background. No last-minute scrambling before an assessment.
-- **One-Click Export** — Professionally formatted PDF exports of SSP and POA&M following DoD/NARA templates. Evidence bundles export as a structured ZIP package.
-- **Assessor View Toggle** — Simulate what a C3PAO sees: Control ID + Implementation Statement + Tagged Evidence + Responsible Owner. Find gaps before the assessment does.
+**Scoping**
 
-### Track 3 — Consultancy / MSP Layer
+A guided questionnaire that determines whether the organization needs Level 1 (FCI only, 17 controls) or Level 2 (CUI present, 110 controls). It walks through asset categorization and captures the system boundary used in the SSP.
 
-- **Multi-Tenant Architecture** — Manage unlimited client organizations from a single consultancy account. Each client operates in their own isolated workspace.
-- **Client Health Map** — Aggregate view of every client's SPRS score, overdue POA&M items, evidence gaps, and assessment readiness — at a glance.
-- **Policy Template Library** — Create reusable policy documents and push them to one or all clients simultaneously. When NIST updates a requirement, update once and propagate everywhere.
-- **Role-Based Access Control (RBAC)** — Four distinct roles: Contractor Admin, Contractor User, Consultant Reviewer, Consultant Admin. Consultants default to comment-only mode until elevated.
-- **Threaded Review Workflow** — Annotate controls and implementation statements with inline comments. Contractors receive notifications and respond in-thread — like a document review, not a ticket system.
-- **Bulk Client Actions** — Push remediation suggestions, policy templates, or compliance tasks to multiple clients in one action.
+**Control Assessment**
+
+All 14 domains are presented one at a time. Each control shows a plain-English description, the NIST assessment guidance, and example evidence types. Users mark each control as Met, Partially Met, Not Met, or Not Applicable, and enter an implementation statement that feeds directly into the SSP.
+
+**SPRS Score**
+
+The score updates in real time as controls are assessed. It starts at 110 and deducts points for each unimplemented control. The dashboard shows score by domain and highlights which controls would recover the most points.
+
+**Evidence Management**
+
+Files are uploaded once and can be mapped to multiple controls. A single Access Control Policy document, for example, might satisfy requirements across ten different controls. Files track an expiry date and get flagged before they lapse.
+
+**POA&M Tracker**
+
+Any control marked Not Met or Partially Met automatically creates a POA&M entry. Users assign an owner, set a due date, and track remediation through to completion.
+
+**SSP and Export**
+
+The System Security Plan assembles automatically as implementation statements are filled in. When ready, users export a formatted PDF following DoD and NARA templates. The POA&M exports in OMB format. Evidence can be exported as a structured ZIP package.
+
+**Assessor View**
+
+A toggle that switches the interface to show what a C3PAO assessor would see: control ID, implementation statement, tagged evidence, and responsible owner. Useful for reviewing readiness before a formal assessment.
+
+### Track 3: Consultancy Layer
+
+Consultants see an aggregate dashboard showing SPRS scores, overdue POA&M items, and evidence gaps across all client organizations. Policy templates can be created once and pushed to individual clients or all clients at once. Clients and consultants communicate through threaded comments on individual controls.
+
+Access is role-based. Consultants default to read-only access within client workspaces until elevated.
 
 ---
 
@@ -90,35 +96,35 @@ Most contractors experience **compliance fatigue** before they ever reach an ass
 
 ```mermaid
 graph TB
-    subgraph Frontend["Frontend — React + Vite"]
+    subgraph Frontend["Frontend (React + Vite)"]
         UI[User Interface]
         Auth[Auth Layer]
-        Dashboard[Live Dashboard]
+        Dashboard[Dashboard]
         Assessment[Assessment Engine]
         Evidence[Evidence Locker]
         Export[Export Engine]
     end
 
-    subgraph Backend["Backend — Express + TypeScript"]
+    subgraph Backend["Backend (Express + TypeScript)"]
         API[REST API]
-        AuthSvc[Auth & RBAC Service]
+        AuthSvc[Auth and RBAC]
         ScoreEngine[SPRS Score Engine]
-        SSPBuilder[SSP Auto-Assembler]
-        FileStore[File Storage Service]
+        SSPBuilder[SSP Assembler]
+        FileStore[File Storage]
         PDFGen[PDF Generator]
     end
 
-    subgraph DataLayer["Data — PostgreSQL + Drizzle ORM"]
+    subgraph DataLayer["Database (PostgreSQL + Drizzle ORM)"]
         OrgDB[(Organizations)]
         ControlDB[(Control Assessments)]
         EvidenceDB[(Evidence Files)]
-        UserDB[(Users & Roles)]
+        UserDB[(Users and Roles)]
         PoamDB[(POA&M Items)]
         ConsultDB[(Consultancies)]
     end
 
-    subgraph Seed["Static Seed Data"]
-        Controls[CMMC_CONTROLS.json\n127 Practices · 14 Domains]
+    subgraph Seed["Seed Data"]
+        Controls[CMMC_CONTROLS.json\n127 practices across 14 domains]
     end
 
     UI --> API
@@ -225,40 +231,39 @@ erDiagram
 
 ## User Flows
 
-### Contractor Onboarding & Scoping
+### Onboarding and Scoping
 
 ```mermaid
 flowchart TD
     A[Sign Up] --> B[Create Organization]
     B --> C[Scoping Questionnaire]
     C --> D{Handles CUI?}
-    D -->|No - FCI only| E[CMMC Level 1\n17 Practices]
-    D -->|Yes - CUI present| F[CMMC Level 2\n110 Practices]
-    E --> G[Asset Categorization\nFCI · Out-of-Scope]
-    F --> H[Asset Categorization\nCUI · Security Protection · Out-of-Scope]
-    G --> I[Define System Boundary]
-    H --> I
-    I --> J[Generate Personalized Readiness Roadmap]
-    J --> K[Dashboard — Live SPRS Score]
+    D -->|No| E[CMMC Level 1, 17 controls]
+    D -->|Yes| F[CMMC Level 2, 110 controls]
+    E --> G[Asset Categorization]
+    F --> G
+    G --> H[Define System Boundary]
+    H --> I[Readiness Roadmap Generated]
+    I --> J[Dashboard with Live SPRS Score]
 ```
 
-### Control Assessment Workflow
+### Control Assessment
 
 ```mermaid
 flowchart LR
-    A[Select Domain] --> B[View Domain Controls]
+    A[Select Domain] --> B[View Controls]
     B --> C[Open Control]
-    C --> D[Read Plain-English Description\n+ NIST Guidance + Example Evidence]
+    C --> D[Read Description and Guidance]
     D --> E{Set Status}
     E -->|Met| F[Enter Implementation Statement]
-    E -->|Partially Met| G[Statement + Auto-create POA&M]
-    E -->|Not Met| H[Auto-create POA&M Item]
-    E -->|Not Applicable| I[Mark N/A with Justification]
+    E -->|Partially Met| G[Statement and POA&M created]
+    E -->|Not Met| H[POA&M created automatically]
+    E -->|Not Applicable| I[Record justification]
     F --> J[Tag Evidence Files]
     G --> J
-    J --> K[SPRS Score Updates Live]
-    K --> L{Domain Complete?}
-    L -->|Yes| M[Domain Marked Done ✓]
+    J --> K[SPRS Score Updates]
+    K --> L{Domain done?}
+    L -->|Yes| M[Domain marked complete]
     L -->|No| B
 ```
 
@@ -266,50 +271,49 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-    A[Upload Evidence File] --> B[File Type Detected\nPDF · Screenshot · Log · Policy · Config]
-    B --> C[Tag to One or Many Controls\nOne-to-Many Relational Mapping]
-    C --> D{Policy Document?}
-    D -->|Yes| E[Set Annual Expiry Date]
-    D -->|No| F[Optional Expiry]
-    E --> G[Evidence Stored in Locker]
+    A[Upload File] --> B[Identify file type]
+    B --> C[Tag to one or more controls]
+    C --> D{Set expiry?}
+    D -->|Policy doc| E[Set annual expiry]
+    D -->|Other| F[Optional]
+    E --> G[Stored in Evidence Locker]
     F --> G
-    G --> H{Expiry Check}
-    H -->|Within 30 days| I[🟡 Warning Flag]
-    H -->|Expired| J[🔴 Alert + Notify Owner]
-    H -->|Current| K[🟢 Valid]
+    G --> H{Expiry status}
+    H -->|Within 30 days| I[Warning flag]
+    H -->|Expired| J[Alert and notify owner]
+    H -->|Current| K[No action needed]
 ```
 
-### SSP & POA&M Export Pipeline
+### SSP and POA&M Export
 
 ```mermaid
 flowchart LR
-    A[Implementation Statements\nEntered Per Control] --> B[SSP Auto-Assembler\nBuilds in Background]
-    B --> C[SSP Document\nSilently Populated]
-    C --> D{Export}
-    D --> E[PDF Generator]
-    D --> F[Word Generator]
-    E --> G[DoD/NARA Formatted SSP PDF]
-    F --> H[Editable .docx]
-    I[Unmet Controls] --> J[POA&M Auto-Generated]
-    J --> K[Assign Owners & Due Dates]
+    A[Implementation Statements] --> B[SSP Assembler]
+    B --> C[SSP Document builds in background]
+    C --> D{Export format}
+    D --> E[PDF]
+    D --> F[Word document]
+    E --> G[DoD formatted SSP]
+    F --> H[Editable docx]
+    I[Not Met controls] --> J[POA&M auto-generated]
+    J --> K[Add owners and dates]
     K --> L{Export}
-    L --> M[OMB-Format POA&M PDF]
-    L --> N[Evidence Bundle ZIP]
+    L --> M[POA&M PDF]
+    L --> N[Evidence ZIP]
 ```
 
-### Multi-Tenant Consultancy Flow
+### Consultancy View
 
 ```mermaid
 flowchart TD
-    A[Consultant Login] --> B[Consultancy Dashboard]
-    B --> C[Client Health Map\nAggregate SPRS · At-Risk · Overdue]
-    C --> D{Action}
-    D -->|Select Client| E[Enter Client Workspace\nComment-Only Mode]
-    D -->|Bulk Push| F[Send Policy Template\nto Selected Clients]
-    D -->|Review| G[Annotate Controls\nThreaded Comments]
-    E --> H[Client Notified\nof Consultant Review]
-    F --> I[Clients Receive\nPolicy Suggestion]
-    G --> H
+    A[Consultant logs in] --> B[Consultancy Dashboard]
+    B --> C[Client list with SPRS scores and status]
+    C --> D{What to do}
+    D -->|Open client| E[View workspace, comment only]
+    D -->|Push template| F[Send policy to selected clients]
+    D -->|Review| G[Add comments to controls]
+    E --> H[Client notified of comments]
+    F --> I[Clients receive template]
 ```
 
 ---
@@ -319,10 +323,10 @@ flowchart TD
 | Domain | Code | Level 1 | Level 2 | Total |
 |---|---|---|---|---|
 | Access Control | AC | 2 | 22 | 24 |
-| Awareness & Training | AT | 0 | 3 | 3 |
-| Audit & Accountability | AU | 0 | 9 | 9 |
+| Awareness and Training | AT | 0 | 3 | 3 |
+| Audit and Accountability | AU | 0 | 9 | 9 |
 | Configuration Management | CM | 0 | 9 | 9 |
-| Identification & Authentication | IA | 2 | 11 | 13 |
+| Identification and Authentication | IA | 2 | 11 | 13 |
 | Incident Response | IR | 0 | 3 | 3 |
 | Maintenance | MA | 0 | 6 | 6 |
 | Media Protection | MP | 1 | 8 | 9 |
@@ -330,27 +334,27 @@ flowchart TD
 | Physical Protection | PE | 4 | 6 | 10 |
 | Risk Assessment | RA | 0 | 3 | 3 |
 | Security Assessment | CA | 0 | 4 | 4 |
-| System & Communications Protection | SC | 2 | 14 | 16 |
-| System & Information Integrity | SI | 4 | 7 | 11 |
+| System and Communications Protection | SC | 2 | 14 | 16 |
+| System and Information Integrity | SI | 4 | 7 | 11 |
 | **Total** | | **17** | **110** | **127** |
 
-> Source: CMMC 2.0 Model, NIST SP 800-171 Rev 2, and NIST SP 800-172.
+Source: CMMC 2.0 Model, NIST SP 800-171 Rev 2.
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology | Reason |
-|---|---|---|
-| Frontend | React 18 + Vite | Fast SPA, hot module reload, excellent TypeScript support |
-| UI Components | shadcn/ui + Tailwind CSS | Polished, accessible, customizable component library |
-| Backend | Express 5 + TypeScript | Proven, lightweight, excellent ecosystem |
-| Database | PostgreSQL + Drizzle ORM | Relational — required for the evidence many-to-many model |
-| Auth | Role-based session auth | Four distinct roles across contractor and consultancy tracks |
-| File Storage | Object Storage | Evidence uploads, SSP/POA&M export artifacts |
-| PDF Generation | Server-side PDF | DoD-compliant SSP and OMB-format POA&M exports |
-| API Contract | OpenAPI 3.0 + codegen | Type-safe client hooks auto-generated from spec |
-| Package Manager | pnpm workspaces | Monorepo with shared libraries and isolated artifact packages |
+| Layer | Technology |
+|---|---|
+| Frontend | React 18 + Vite |
+| UI | shadcn/ui + Tailwind CSS |
+| Backend | Express 5 + TypeScript |
+| Database | PostgreSQL with Drizzle ORM |
+| Auth | Role-based sessions |
+| File Storage | Object storage |
+| PDF Export | Server-side generation |
+| API Contract | OpenAPI 3.0 with codegen |
+| Package Manager | pnpm workspaces |
 
 ---
 
@@ -358,36 +362,26 @@ flowchart TD
 
 ```
 cmmc-compass/
-├── assets/                      # Brand assets
-│   └── logo.png                 # CMMC Compass logo
+├── assets/
+│   └── logo.png
 ├── artifacts/
-│   ├── api-server/              # Express + TypeScript REST API
-│   │   └── src/
-│   │       ├── routes/          # API route handlers
-│   │       ├── middlewares/     # Auth, validation, error handling
-│   │       └── lib/             # Shared server utilities
-│   └── web/                     # React + Vite frontend
-│       └── src/
-│           ├── pages/           # Route-level page components
-│           ├── components/      # Shared UI components
-│           └── hooks/           # Custom React hooks
+│   ├── api-server/          # Express backend
+│   └── web/                 # React frontend
 ├── lib/
-│   ├── api-spec/                # OpenAPI 3.0 specification (single source of truth)
-│   ├── api-client/              # Auto-generated React Query hooks
-│   ├── api-zod/                 # Auto-generated Zod validation schemas
-│   └── db/                      # PostgreSQL schema via Drizzle ORM
+│   ├── api-spec/            # OpenAPI spec
+│   ├── api-client/          # Generated React Query hooks
+│   ├── api-zod/             # Generated Zod schemas
+│   └── db/                  # Drizzle ORM schema
 ├── data/
-│   └── CMMC_CONTROLS.json       # Canonical control definitions — 127 practices, 14 domains
+│   └── CMMC_CONTROLS.json   # All 127 control definitions
 ├── docs/
-│   ├── architecture.md          # System design decisions and service diagram
-│   ├── data-model.md            # Database schema and entity relationships
-│   ├── cmmc-framework.md        # CMMC 2.0 framework reference and domain guide
-│   └── roadmap.md               # Feature roadmap organized by phase
-├── scripts/                     # Utility and migration scripts
+│   ├── architecture.md
+│   ├── data-model.md
+│   ├── cmmc-framework.md
+│   └── roadmap.md
+├── scripts/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   └── feature_request.md
 │   └── PULL_REQUEST_TEMPLATE.md
 ├── CONTRIBUTING.md
 └── LICENSE
@@ -397,80 +391,53 @@ cmmc-compass/
 
 ## Roadmap
 
-### Phase 1 — Core MVP: Track 1 Contractor Platform
-- [ ] Authentication — signup, login, org creation, role setup
-- [ ] Smart scoping questionnaire — Level 1 / Level 2 auto-detection, asset categorization
-- [ ] Domain-by-domain control assessment with plain-English guidance
-- [ ] Live SPRS score dashboard with Golden Path widget
-- [ ] Evidence locker — upload, multi-control tagging, expiry flagging
-- [ ] POA&M tracker — auto-generation, owner assignment, due dates
+### Phase 1: Contractor Platform
+- [ ] Auth, organization setup, team invitations
+- [ ] Scoping questionnaire with Level 1 / Level 2 selection
+- [ ] Domain-by-domain control assessment
+- [ ] Live SPRS score dashboard
+- [ ] Evidence locker with multi-control tagging and expiry tracking
+- [ ] POA&M tracker with owner assignment and due dates
 
-### Phase 2 — Artifact Generation
-- [ ] SSP auto-assembly and PDF export (DoD/NARA template)
-- [ ] POA&M PDF export (OMB format)
-- [ ] Evidence bundle export (structured ZIP)
-- [ ] Assessor view toggle (read-only C3PAO simulation)
+### Phase 2: Document Export
+- [ ] SSP export as PDF and Word
+- [ ] POA&M export in OMB format
+- [ ] Evidence bundle export
+- [ ] Assessor view toggle
 
-### Phase 3 — Track 3: Consultancy / MSP Layer
-- [ ] Multi-tenant architecture — consultancy parent + client orgs
-- [ ] Client health map — aggregate SPRS, at-risk, overdue
-- [ ] Policy template library — create, manage, push to clients
-- [ ] RBAC — four role types fully enforced
-- [ ] Threaded review workflow — inline annotations and notifications
-- [ ] Bulk client actions — push templates or tasks to multiple clients
+### Phase 3: Consultancy Layer
+- [ ] Multi-tenant architecture
+- [ ] Client health dashboard
+- [ ] Policy template library
+- [ ] Four-role RBAC
+- [ ] Threaded comment and review workflow
+- [ ] Bulk actions across clients
 
 ---
 
 ## Getting Started
 
 ```bash
-# Clone the repository
 git clone https://github.com/saisravan909/cmmc-compass.git
 cd cmmc-compass
-
-# Install dependencies (requires pnpm)
 pnpm install
-
-# Configure environment
 cp .env.example .env
 # Edit .env with your database URL and session secret
-
-# Push database schema
 pnpm --filter @workspace/db run push
-
-# Start development
-pnpm --filter @workspace/api-server run dev   # API on :8080
-pnpm --filter @workspace/web run dev           # Frontend on :5173
+pnpm --filter @workspace/api-server run dev
+pnpm --filter @workspace/web run dev
 ```
 
-> Full setup documentation will be published in [docs/architecture.md](docs/architecture.md) as the application is built out.
+Full setup instructions will be added to [docs/architecture.md](docs/architecture.md) as the application is built.
 
 ---
 
 ## Contributing
 
-Contributions are welcome. Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
-
-All commits must follow [Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-feat: add live SPRS score calculation
-fix: correct evidence expiry date comparison
-docs: update data model diagram
-chore: seed CMMC Level 1 control definitions
-```
-
-Branch naming: `feat/<short-description>`, `fix/<short-description>`, `docs/<short-description>`
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ---
 
 ## License
 
-MIT © 2025 Sai Sravan Cherukuri
-
----
-
-<div align="center">
-  <strong>CMMC Compass</strong> &nbsp;—&nbsp; GRC Guidance · Clarity · Secure Progress<br/>
-  Built for defense contractors who deserve better compliance tools.
-</div>
+MIT - Sai Sravan Cherukuri
